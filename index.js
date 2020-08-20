@@ -28,6 +28,14 @@ test instructions
 const questions = [
     {
         type:'input',
+        message: "What is your GitHub username?",
+        name: "github"
+    },{
+        type:'input',
+        message: "What is your email?",
+        name: "email"
+    },{
+        type:'input',
         message: "What is the title of your project?",
         name: "title"
     },{
@@ -36,16 +44,12 @@ const questions = [
         name: "description"
     },{
         type:'input',
-        message: "How do you use this project?",
+        message: "What does the user need to know about using the repo?",
         name: "usage"
     },{
         type:'input',
-        message: "Give instructions on how to install this project:",
+        message: "What command should be run to install the dependencies?",
         name: "install"
-    },{
-        type:'input',
-        message: "How can others contribute to the project?",
-        name: "contribution"
     },{
         type:'list',
         message: "What kind of license would you like to use for this project?",
@@ -57,27 +61,86 @@ const questions = [
         name: "testing"
     },{
         type:'input',
-        message: "What is your GitHub username?",
-        name: "github"
-    },{
-        type:'input',
-        message: "What is your email?",
-        name: "email"
+        message: "How can others contribute to the project?",
+        name: "contribution"
     }
 ];
 
-// function to write README file
-function writeToFile(fileName, data) {
+/* 
+Title
+Description
+Table of Contents
+Installation
+Usage
+License
+Contributing
+Tests
+Questions
+*/
 
+// function to write README file
+function writeToFile(fileName, { title, description, usage, install, contribution, license, testing, github, email }) {
+    const readme = `# ${title}
+
+## License
+![GitHub license](https://img.shields.io/badge/license-${license}-blue.svg)
+
+## Description
+${description}
+
+## Table of Contents
+
+* [Installation](#installation)
+
+* [Usage](#usage)
+
+* [License](#license)
+
+* [Contributing](#contributing)
+
+* [Tests](#tests)
+
+* [Questions](#questions)
+
+## Installation
+To install the necessary denpendencies, run the following command:
+...
+${install}
+...
+
+## Usage
+${usage}
+
+## Contributing
+${contribution}
+
+## Tests
+${testing}
+
+## Questions
+If you have any questions you can email me at: ${email}
+
+Also feel free to check out my GitHub page here: https://github.com/${github}
+`
+
+    // console.log('readme: ', readme);
+
+    fs.writeFile(fileName, readme, err => {
+        if (err) {
+            throw err;
+        }
+        console.log(`Saved`);
+    },)
+    .catch (err => console.log(err));
 }
 
 // function to initialize program
 async function init() {
     try {
         const answers = await inquirer.prompt(questions);
-        console.log('answers: ', answers);
+        // console.log('answers: ', answers);
         
-        // writeToFile("README.md", answers)
+        writeToFile("README.md", answers)
     }
     catch {err => console.log(err)};
 }
