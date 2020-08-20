@@ -22,9 +22,10 @@ This will ask a bunch of questions and generate a good README.md file from those
 
 ## Installation
 To install the necessary denpendencies, run the following command:
-...
+
+```
 npm i
-...
+```
 
 ## Usage
 run "node index.js"

@@ -1,29 +1,6 @@
 const fs = require("fs");
 const inquirer = require("inquirer");
 
-/*
-what is the app for
-how to use the app
-how to install it 
-how to report issues 
-how to make contributions so that other developers are more likely to use and contribute to the success of the project.
-title of your project 
-sections entitled Description
-Table of Contents
-Installation
-Usage
-License
-Contributing
-Tests
-Questions
-
-description
-installation instructions
-usage information
-contribution guidelines
-test instructions
-*/
-
 // array of questions for user
 const questions = [
     {
@@ -76,10 +53,16 @@ License
 Contributing
 Tests
 Questions
+Things to add:
+    Authors
+    copy right and year
+    Tech Used
+    screen shot relative path
 */
 
 // function to write README file
 function writeToFile(fileName, { title, description, usage, install, contribution, license, testing, github, email }) {
+    const codeStyling = "```"
     const readme = `# ${title}
 
 ## License
@@ -104,9 +87,9 @@ ${description}
 
 ## Installation
 To install the necessary denpendencies, run the following command:
-...
+${codeStyling}
 ${install}
-...
+${codeStyling}
 
 ## Usage
 ${usage}
@@ -137,6 +120,9 @@ Also feel free to check out my GitHub page here: https://github.com/${github}
 // function to initialize program
 async function init() {
     try {
+        console.log("This will generate a README.md file.")
+        console.log("To create a list in your answers use ';' to seperate list items and ':' after your list title if you want one.");
+        console.log(`If you type 'run "<code line>"' it will be given code syntax in the readme file.`);
         const answers = await inquirer.prompt(questions);
         // console.log('answers: ', answers);
         
