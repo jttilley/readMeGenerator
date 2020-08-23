@@ -1,16 +1,19 @@
 const fs = require("fs");
 const inquirer = require("inquirer");
+const generateMarkdown = require("./utils/generateMarkdown.js");
 
 // array of questions for user
 const questions = [
     {
         type:'input',
         message: "What is your GitHub username?",
-        name: "github"
+        name: "github",
+        default: "jttilley"
     },{
         type:'input',
         message: "What is your email?",
-        name: "email"
+        name: "email",
+        default: "jttilley007@yahoo.com"
     },{
         type:'input',
         message: "What is the title of your project?",
@@ -19,6 +22,25 @@ const questions = [
         type:'input',
         message: "Give a brief description of your what your project does:",
         name: "description"
+    },{
+        type:'input',
+        message: "Who worked on the project?",
+        name: "authors"
+    },{
+        type:'checkbox',
+        message: "What tech was used for this project?",
+        choices: ["HTTP", "CSS", "JavaScript", "Bootstrap", "jQuery", "Ajax", "Node.js", "ES6", "RegEx", "Moment.js", "FontAwesome", "APIs", "Other"],
+        name: "tech"
+    },{
+        type:'input',
+        message: "What APIs were used in this project?",
+        name: "api",
+        when: (ans) => ans.tech.indexOf("APIs") > -1
+    },{
+        type:'input',
+        message: "List any other Tech used:",
+        name: "tech2",
+        when: (ans) => ans.tech.indexOf("Other") > -1
     },{
         type:'input',
         message: "What does the user need to know about using the repo?",
@@ -39,75 +61,33 @@ const questions = [
     },{
         type:'input',
         message: "How can others contribute to the project?",
-        name: "contribution"
+        name: "contribution",
+        default: "Fork it"
+    },{
+        type:'input',
+        message: "Photo: Enter the local path and name of a photo, or a web link to it.",
+        name: "pic",
+        
+    },{
+        type:'input',
+        message: "Enter your repository link if you have one:",
+        name: "repo",
+        
+    },{
+        type:'input',
+        message: "Enter your deployed link if you have one:",
+        name: "deployed",
+        
     }
 ];
 
-/* 
-Title
-Description
-Table of Contents
-Installation
-Usage
-License
-Contributing
-Tests
-Questions
-Things to add:
-    Authors
-    copy right and year
-    Tech Used
-    screen shot relative path
-*/
 
 // function to write README file
-function writeToFile(fileName, { title, description, usage, install, contribution, license, testing, github, email }) {
-    const codeStyling = "```"
-    const readme = `# ${title}
+function writeToFile(fileName, data) {
 
-## License
-![GitHub license](https://img.shields.io/badge/license-${license}-blue.svg)
-
-## Description
-${description}
-
-## Table of Contents
-
-* [Installation](#installation)
-
-* [Usage](#usage)
-
-* [License](#license)
-
-* [Contributing](#contributing)
-
-* [Tests](#tests)
-
-* [Questions](#questions)
-
-## Installation
-To install the necessary denpendencies, run the following command:
-${codeStyling}
-${install}
-${codeStyling}
-
-## Usage
-${usage}
-
-## Contributing
-${contribution}
-
-## Tests
-${testing}
-
-## Questions
-If you have any questions you can email me at: ${email}
-
-Also feel free to check out my GitHub page here: https://github.com/${github}
-`
-
-    // console.log('readme: ', readme);
-
+    const readme = generateMarkdown(data);
+    console.log('readme: ', readme);
+    
     fs.writeFile(fileName, readme, err => {
         if (err) {
             throw err;
@@ -123,8 +103,9 @@ async function init() {
         console.log("This will generate a README.md file.")
         console.log("To create a list in your answers use ';' to seperate list items and ':' after your list title if you want one.");
         console.log(`If you type 'run "<code line>"' it will be given code syntax in the readme file.`);
+
         const answers = await inquirer.prompt(questions);
-        // console.log('answers: ', answers);
+        console.log('answers: ', answers);
         
         writeToFile("README.md", answers)
     }
