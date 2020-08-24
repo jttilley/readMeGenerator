@@ -32,7 +32,7 @@ JavaScript, jQuery, Node.js, ES6, RegEx
 
   
 ## Example
-![example](./assets/Readme-Example.png)
+![example](./assets/Readme-Generator.gif)
   
 ## Installation
 To install the necessary denpendencies, run the following command:
@@ -47,7 +47,7 @@ run "node index.js" in the terminal
 The license for this project is: *MIT* ©  2020 Jason Tilley
   
   
-## Contribution
+## Contributing
 Fork it
   
 ## Tests

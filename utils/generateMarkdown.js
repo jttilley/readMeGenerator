@@ -65,44 +65,62 @@ function generateMarkdown( { title, description, usage, install, contribution, l
     authorTitle += `s`
   };
 
-  console.log('initial fullTech: ', fullTech);
-
-  console.log('tech2: ', tech2);
   // add extra tech items to tech list
   if (tech2 !== undefined) {
-    console.log('tech2: ', tech2);
     fullTech = fullTech.replace(/, Other/,""); //remove other from list
-    fullTech += `, ${tech2}`;
+    fullTech += `, ${tech2}`; // add list of other techs used
   };
   
-  console.log('after tech2 fullTech: ', fullTech);
+
 
   // add APIs to tech list
   if (api != undefined) {
     fullTech = fullTech.replace(/, APIs/,""); //remove APIs from list
-    fullTech += `, APIs: ${api}`;
+    fullTech += `, APIs: ${api}`; // add list of APIs
   };
   
-  console.log('after api fullTech: ', fullTech);
+
 
   // setup for adding links if any were included
   let linkTitle = "Link";
   if (repo != "" && deployed != "") {
     linkTitle += "s";
   };
-  console.log('linkTitle: ', linkTitle);
+
   
   let link = "";
   if (deployed != "") {
     link += `Deployed link: ${deployed}
     `;
   };
-  console.log('after depo link: ', link);
+  // console.log('after depo link: ', link);
   
   if (repo != "") {
     link += `Repo link: ${repo}`;
   };
-  console.log('after repo link: ', link);
+  // console.log('after repo link: ', link);
+
+  //create table of contents
+  let tc = `
+  * [Installation](#installation)
+  
+  * [Usage](#usage)
+  
+  * [License](#license)
+  
+  * [Contributing](#contributing)
+  
+  * [Tests](#tests)
+  
+  * [Questions](#questions)
+    `
+  
+    if (pic != "") {
+      tc = `* [Example](#example)
+  
+  ${tc}`;
+    }
+
 
 
   // initialize readme file
@@ -113,7 +131,7 @@ function generateMarkdown( { title, description, usage, install, contribution, l
 `
   // add description
   readme += insertPiece("Description",description);
-  console.log('after description readme: ', readme);
+  // console.log('after description readme: ', readme);
 
   // add links here
   if (repo !== "" || deployed !== "") {
@@ -126,26 +144,14 @@ function generateMarkdown( { title, description, usage, install, contribution, l
   // Add Tech used
   readme += insertPiece("Tech Used",fullTech); 
 
+  
+
   // add the table of contents
-  readme += insertPiece("Table of Contents",`
-* [Example](#example)
-
-* [Installation](#installation)
-
-* [Usage](#usage)
-
-* [License](#license)
-
-* [Contributing](#contributing)
-
-* [Tests](#tests)
-
-* [Questions](#questions)
-`); 
+  readme += insertPiece("Table of Contents",tc); 
 
   // add a pic for the order if one exists
-  console.log('pic: ', pic);
-  if (pic !== "") {
+  // console.log('pic: ', pic);
+  if (pic != "") {
     readme += insertPiece("Example",`![example](${pic})`);
   }
 
@@ -165,7 +171,7 @@ ${codeStyling}
   `);
 
   // add contribution
-  readme += insertPiece("Contribution",contribution);
+  readme += insertPiece("Contributing",contribution);
 
   // add tests
   readme += insertPiece("Tests",testing);

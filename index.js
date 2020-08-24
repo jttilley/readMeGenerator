@@ -86,13 +86,13 @@ const questions = [
 function writeToFile(fileName, data) {
 
     const readme = generateMarkdown(data);
-    console.log('readme: ', readme);
+    // console.log('readme: ', readme);
     
     fs.writeFile(fileName, readme, err => {
         if (err) {
             throw err;
         }
-        console.log(`Saved`);
+        console.log(`Saved Sucessfully!`);
     },)
     .catch (err => console.log(err));
 }
@@ -105,7 +105,7 @@ async function init() {
         console.log(`If you type 'run "<code line>"' it will be given code syntax in the readme file.`);
 
         const answers = await inquirer.prompt(questions);
-        console.log('answers: ', answers);
+        // console.log('answers: ', answers);
         
         writeToFile("./created/README.md", answers)
     }
