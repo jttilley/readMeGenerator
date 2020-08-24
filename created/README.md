@@ -3,8 +3,8 @@
 ![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)
 
 ## Description
-* Asks the user a bunch of questions about what to include in the readme
-* Generates a good README.md file in the created folder with the users answers
+* Asks the user a bunch of questions about info to include in the readme file
+* Generates a good README.md file with the answers in the created folder
 
 ## Author
 Jason Tilley
@@ -52,7 +52,7 @@ Fork it
 * try adding more than one author, or just a single author
 
 ## Questions
-If you have any questions you can email me at: jttilley007@yahoo.com
+If you have any questions you can email me at: jttilley007@gmail.com
 
 Also feel free to check out my GitHub page here: https://github.com/jttilley
   

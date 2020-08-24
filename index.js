@@ -8,12 +8,12 @@ const questions = [
         type:'input',
         message: "What is your GitHub username?",
         name: "github",
-        default: "jttilley"
+        // default: "jttilley"
     },{
         type:'input',
         message: "What is your email?",
         name: "email",
-        default: "jttilley007@yahoo.com"
+        // default: "jttilley007@gmail.com"
     },{
         type:'input',
         message: "What is the title of your project?",
