@@ -32,8 +32,14 @@ JavaScript, jQuery, Node.js, ES6, RegEx
 
   
 ## Example
+Example generating a basic readme for this project:
+
 ![example](./assets/Readme-Generator.gif)
-  
+
+Example generating a readme with links and an example photo for a web based app using APIs:
+
+![example](./assets/Readme-Generator-wd.gif)
+
 ## Installation
 To install the necessary denpendencies, run the following command:
 ```
