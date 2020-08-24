@@ -1,12 +1,22 @@
 # Readme Generator
 
-## License
 ![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)
 
 ## Description
-Generates a good readme based on the answers to prompted questions.
-
+Generates a good Readme.md file based on the input from the user.
+  
+## Link
+Repo link: https://github.com/jttilley/readMeGenerator
+  
+## Author
+Jason Tilley
+  
+## Tech Used
+JavaScript, jQuery, Node.js, ES6, RegEx
+  
 ## Table of Contents
+
+* [Example](#example)
 
 * [Installation](#installation)
 
@@ -20,22 +30,35 @@ Generates a good readme based on the answers to prompted questions.
 
 * [Questions](#questions)
 
+  
+## Example
+![example](./assets/Readme-Example.png)
+  
 ## Installation
 To install the necessary denpendencies, run the following command:
 ```
-npm i 
+npm i
 ```
 
 ## Usage
-To use the program, install it and run "node index.js" in the terminal. Answer the questions and the README.md file will be generated in the local folder.
-
-## Contributing
+run "node index.js" in the terminal
+  
+## License
+The license for this project is: *MIT* ©  2020 Jason Tilley
+  
+  
+## Contribution
 Fork it
-
+  
 ## Tests
-run as specified in the usage
-
+* run it and answer the questions
+* use semicolons to seperate a list
+* include a colon to start a list if you would like
+* add a local photo
+  
 ## Questions
 If you have any questions you can email me at: jttilley007@yahoo.com
 
 Also feel free to check out my GitHub page here: https://github.com/jttilley
+  
+  

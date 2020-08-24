@@ -107,7 +107,7 @@ async function init() {
         const answers = await inquirer.prompt(questions);
         console.log('answers: ', answers);
         
-        writeToFile("README.md", answers)
+        writeToFile("./created/README.md", answers)
     }
     catch {err => console.log(err)};
 }

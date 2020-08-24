@@ -40,7 +40,7 @@ function makeLists(str) {
 function insertPiece(title, data) {
   return `## ${title}
 ${data}
-  
+
 `
 }
 
@@ -173,7 +173,7 @@ ${codeStyling}
   // add Questions
   readme += insertPiece("Questions",`If you have any questions you can email me at: ${email}
 
-  Also feel free to check out my GitHub page here: https://github.com/${github}
+Also feel free to check out my GitHub page here: https://github.com/${github}
   `);
 
   
