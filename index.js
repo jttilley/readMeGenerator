@@ -45,7 +45,7 @@ const questions = [
     },{
         type:'input',
         message: "What does the user need to know about using the repo?",
-        name: "usage"
+        name: "usage",
         default: `Fork it; Clone it to your computer; run "node index.js" in the terminal`
     },{
         type:'input',
