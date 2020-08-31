@@ -8,12 +8,12 @@ const questions = [
         type:'input',
         message: "What is your GitHub username?",
         name: "github",
-        // default: "jttilley"
+        default: "jttilley"
     },{
         type:'input',
         message: "What is your email?",
         name: "email",
-        // default: "jttilley007@gmail.com"
+        default: "jttilley007@gmail.com"
     },{
         type:'input',
         message: "What is the title of your project?",
@@ -25,7 +25,8 @@ const questions = [
     },{
         type:'input',
         message: "Who worked on the project?",
-        name: "authors"
+        name: "authors",
+        default: "Jason Tilley"
     },{
         type:'checkbox',
         message: "What tech was used for this project?",
@@ -45,10 +46,12 @@ const questions = [
         type:'input',
         message: "What does the user need to know about using the repo?",
         name: "usage"
+        default: `Fork it; Clone it to your computer; run "node index.js" in the terminal`
     },{
         type:'input',
         message: "What command should be run to install the dependencies?",
-        name: "install"
+        name: "install",
+        default: "npm i"
     },{
         type:'list',
         message: "What kind of license would you like to use for this project?",
@@ -57,7 +60,8 @@ const questions = [
     },{
         type:'input',
         message: "How can someone test this project?",
-        name: "testing"
+        name: "testing",
+        default: `Run "npm run test"`
     },{
         type:'input',
         message: "How can others contribute to the project?",
