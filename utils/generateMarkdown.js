@@ -127,7 +127,7 @@ function generateMarkdown( { title, description, usage, install, contribution, l
   // initialize readme file
   let readme = `# ${title}
 
-![GitHub license](https://img.shields.io/badge/license-${license}-blue.svg)
+![GitHub license](https://img.shields.io/badge/License-${license}-blue.svg)
 
 `
   // add description
