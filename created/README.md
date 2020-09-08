@@ -1,19 +1,24 @@
-# Readme Generator
+# Note Taker
 
 ![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)
 
 ## Description
-* Asks the user a bunch of questions about info to include in the readme file
-* Generates a good README.md file with the answers in the created folder
+Uses express to save new notes and delete old notes.
+
+## Links
+Deployed link: https://github.com/jttilley/noteTaker
+    Repo link: https://github.com/jttilley/noteTaker
 
 ## Author
 Jason Tilley
 
 ## Tech Used
-JavaScript, jQuery, Node.js, ES6, RegEx
+HTTP, CSS, JavaScript, Bootstrap, jQuery, Ajax, Node.js, ES6, Express, Path, FS
 
 ## Table of Contents
-
+* [Example](#example)
+  
+  
   * [Installation](#installation)
   
   * [Usage](#usage)
@@ -27,6 +32,9 @@ JavaScript, jQuery, Node.js, ES6, RegEx
   * [Questions](#questions)
     
 
+## Example
+![example](./public/assets/NoteTaker.png)
+
 ## Installation
 To install the necessary denpendencies, run the following command:
 ```
@@ -34,22 +42,17 @@ npm i
 ```
 
 ## Usage
-To run, enter "node index.js" in the terminal
+You can just run the heroku link to start saving notes.
 
 ## License
 The license for this project is: *MIT* ©  2020 Jason Tilley
   
 
 ## Contributing
-Fork it
+
 
 ## Tests
-* try using semicolons to create a bulleted list
-* try adding a photo from a local folder
-* try leaving the photo question blank
-* try including 1 link or both links or no links
-* try selecting APIs or Other in the Techs used list, and you will be asked extra questions
-* try adding more than one author, or just a single author
+
 
 ## Questions
 If you have any questions you can email me at: jttilley007@gmail.com

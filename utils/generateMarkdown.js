@@ -91,7 +91,8 @@ function generateMarkdown( { title, description, usage, install, contribution, l
   let link = "";
   if (deployed != "") {
     link += `Deployed link: ${deployed}
-    `;
+
+`;
   };
   // console.log('after depo link: ', link);
   
