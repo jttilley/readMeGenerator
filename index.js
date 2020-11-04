@@ -76,7 +76,16 @@ const questions = [
         type:'input',
         message: "Enter your repository link if you have one:",
         name: "repo",
-        default: "https://github.com/jttilley/" + ans.title.replace(" ","-").toLowerCase()
+        default: "https://github.com/jttilley/",
+        validate: (ans) => {
+            console.log('ans: ', ans);
+            console.log('ans[ans.length-1]: ', ans[ans.length-1]);
+            
+            if (ans[ans.length-1] === "/") {
+                return "Please add the rest pf the link. found |" + ans[ans.length-1] + "|"
+            } 
+            return true;
+        }
     },{
         type:'input',
         message: "Enter your deployed link if you have one:",

@@ -1,24 +1,23 @@
-# Employee Directory
+# 
 
 ![GitHub license](https://img.shields.io/badge/License-MIT-blue.svg)
 
 ## Description
-Uses React to lists employees and the employees can be searched and sorted.
+
 
 ## Links
-Deployed link: deployed
+Deployed link: d
 
-Repo link: https://github.com/jttilley/employee-directory
+Repo link: https://github.com/jttilley/test
 
 ## Author
 Jason Tilley
 
 ## Tech Used
-HTTP, CSS, JavaScript, Bootstrap, jQuery, Ajax, ES6, Node.js, express, React
+
 
 ## Table of Contents
-* [Example](#example)
-  
+  * [Example](#example)  
   
   * [Installation](#installation)
   
@@ -28,9 +27,9 @@ HTTP, CSS, JavaScript, Bootstrap, jQuery, Ajax, ES6, Node.js, express, React
   
   * [Contributing](#contributing)
   
-  * [Tests](#tests)
+    * [Tests](#tests)
   
-  * [Questions](#questions)
+    * [Questions](#questions)
     
 
 ## Example
