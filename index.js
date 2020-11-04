@@ -30,7 +30,7 @@ const questions = [
     },{
         type:'checkbox',
         message: "What tech was used for this project?",
-        choices: ["HTTP", "CSS", "JavaScript", "Bootstrap", "jQuery", "Ajax", "Node.js", "ES6", "RegEx", "Moment.js", "FontAwesome", "APIs", "Other"],
+        choices: ["HTTP", "CSS", "JavaScript", "Bootstrap", "React", "jQuery", "Ajax", "ES6", "RegEx", "Moment.js", "FontAwesome", "Node.js", "express", "inquirer","fs","path","utils", "APIs", "Other"],
         name: "tech"
     },{
         type:'input',
@@ -71,12 +71,12 @@ const questions = [
         type:'input',
         message: "Photo: Enter the local path and name of a photo, or a web link to it.",
         name: "pic",
-        
+        default: "./public/assets/images/Screen-Shot.png"
     },{
         type:'input',
         message: "Enter your repository link if you have one:",
         name: "repo",
-        
+        default: "https://github.com/jttilley/" + ans.title.replace(" ","-").toLowerCase()
     },{
         type:'input',
         message: "Enter your deployed link if you have one:",

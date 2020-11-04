@@ -109,16 +109,24 @@ function generateMarkdown( { title, description, usage, install, contribution, l
   
   * [License](#license)
   
-  * [Contributing](#contributing)
+  `
+  if (contribution != "") {
+    tc += `* [Contributing](#contributing)
   
-  * [Tests](#tests)
+    `;
+  }
   
-  * [Questions](#questions)
-    `
+  if (testing != "") {
+    tc += `* [Tests](#tests)
   
-    if (pic != "") {
-      tc = `* [Example](#example)
+    `;
+  }
+
+  tc += `* [Questions](#questions)
+    `;
   
+  if (pic != "") {
+    tc = `  * [Example](#example)  
   ${tc}`;
     }
 
@@ -172,10 +180,14 @@ ${codeStyling}
   `);
 
   // add contribution
-  readme += insertPiece("Contributing",contribution);
+  if (contribution != "") {
+    readme += insertPiece("Contributing",contribution);
+  }
 
   // add tests
-  readme += insertPiece("Tests",testing);
+  if (testing != "") {
+    readme += insertPiece("Tests",testing);
+  }
 
   // add Questions
   readme += insertPiece("Questions",`If you have any questions you can email me at: ${email}
